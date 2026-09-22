@@ -1,6 +1,4 @@
 import './style.css'
+import { renderLogin } from './pages/login'
 
-document.querySelector('#app').innerHTML = `
-  <h1>Social Media App</h1>
-`
-
+document.querySelector('#app').innerHTML = renderLogin()
