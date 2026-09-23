@@ -1,4 +1,4 @@
 import './style.css';
-import { renderLogin } from './pages/login.js';
+import { renderFeed } from './pages/feed.js';
 
-renderLogin();
+renderFeed();

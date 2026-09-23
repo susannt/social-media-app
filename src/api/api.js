@@ -1,4 +1,4 @@
-import { apiClient } from "./apiClient";
+import { apiClient } from "./apiClient.js";
 
 const REGISTER_URL = "https://v2.api.noroff.dev/auth/register";
 
@@ -21,7 +21,7 @@ export async function register(name, email, password) {
 }
 
 export async function getPosts() {
-    const result = await response.json();
+    const result = await apiClient("/social/posts");
 
     return result;
 }
