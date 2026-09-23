@@ -23,7 +23,7 @@ export function renderLogin() {
 
         const result = await login(email, password);
 
-        console.log(result);
+        localStorage.setItem("token", result.data.accessToken);
 
     });
 }

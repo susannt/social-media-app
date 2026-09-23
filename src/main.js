@@ -1,4 +1,4 @@
 import './style.css';
-import { renderRegister } from './pages/register';
+import { renderLogin } from './pages/login.js';
 
-renderRegister();
+renderLogin();
