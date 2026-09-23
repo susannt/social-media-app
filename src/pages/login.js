@@ -1,4 +1,4 @@
-import { login } from "../api/api.js";
+import { loginUser } from "../api/authService.js";
 
 export function renderLogin() {
     const app = document.querySelector("#app");
@@ -18,12 +18,17 @@ export function renderLogin() {
     loginForm.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-        const email = document.querySelector("#email").value;
-        const password = document.querySelector("#password").value;
+        const credentials = {
+            email: loginForm.email.value,
+            password: loginForm.password.value,
+        };
 
-        const result = await login(email, password);
+        try {
+            const profile = await loginUser(credentials);
 
-        localStorage.setItem("token", result.data.accessToken);
-
+            console.log(profile);
+        }   catch (error) {
+            console.error("Login failed:", error);
+        }
     });
 }
