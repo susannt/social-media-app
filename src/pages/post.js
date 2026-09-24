@@ -1,4 +1,4 @@
-import { getPosts, updatePost } from "../api/api.js";
+import { getPosts, updatePost, deletePost } from "../api/api.js";
 
 export async function renderPost(postId) {
     const result = await getPosts ();
@@ -25,6 +25,7 @@ export function renderEditPost(post) {
             <input type="text" id="title" value="${post.title}" required>
             <textarea id="body" required>${post.body}</textarea>
             <button type="submit">Save changes</button>
+            <button type="button" id="delete-post">Delete post</button>
         </form>
   `;
 
@@ -33,13 +34,20 @@ export function renderEditPost(post) {
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-    const postData = {
-        title: form.title.value,
-        body: form.body.value,
-    };
+        const postData = {
+            title: form.title.value,
+            body: form.body.value,
+        };
 
-    const result = await updatePost(post.id, postData);
+        const result = await updatePost(post.id, postData);
 
-    console.log(result);
-  });
+        console.log(result);
+    });
+
+    const deleteButton = document.querySelector("#delete-post");
+
+    deleteButton.addEventListener("click", async function () {
+        const result = await deletePost(post.id);
+        console.log(result);
+    });
 }

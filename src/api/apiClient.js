@@ -32,7 +32,9 @@ export async function apiClient(endpoint, options = {}) {
     },
   });
 
-  const result = await response.json();
+  const text = await response.text();
+
+  const result = text ? JSON.parse(text) : {};
 
   return result;
 }

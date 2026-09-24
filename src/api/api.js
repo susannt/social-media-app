@@ -43,3 +43,11 @@ export async function updatePost(postId, postData) {
 
     return result;
 }
+
+export async function deletePost(postId) {
+    const result = await apiClient(`/social/posts/${postId}`, {
+        method: "DELETE",
+    });
+
+    return result;
+}
