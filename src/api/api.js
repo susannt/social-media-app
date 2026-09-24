@@ -25,3 +25,12 @@ export async function getPosts() {
 
     return result;
 }
+
+export async function createPost(postData) {
+    const result = await apiClient("/social/posts", {
+        method: "POST",
+        body: JSON.stringify(postData),
+    });
+
+    return result;
+}
