@@ -1,4 +1,14 @@
 import './style.css';
-import { renderCreatePost } from './pages/feed.js';
+import { getPosts } from './api/api.js';
+import { renderEditPost } from './pages/post.js';
 
-renderCreatePost();
+async function start() {
+  const result = await getPosts();
+
+  const post = result.data[0];
+
+  renderEditPost(post);
+
+}
+
+start();

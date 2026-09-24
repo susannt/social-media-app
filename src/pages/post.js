@@ -1,4 +1,4 @@
-import { getPosts } from "../api/api.js";
+import { getPosts, updatePost } from "../api/api.js";
 
 export async function renderPost(postId) {
     const result = await getPosts ();
@@ -13,4 +13,33 @@ export async function renderPost(postId) {
             <p>${post.title}</p>
         </article>
     `;
+}
+
+export function renderEditPost(post) {
+    const app = document.querySelector("#app");
+
+    app.innerHTML = `
+        <h1>Edit post</h1>
+
+        <form id="edit-post-form">
+            <input type="text" id="title" value="${post.title}" required>
+            <textarea id="body" required>${post.body}</textarea>
+            <button type="submit">Save changes</button>
+        </form>
+  `;
+
+    const form = document.querySelector("#edit-post-form");
+
+    form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+    const postData = {
+        title: form.title.value,
+        body: form.body.value,
+    };
+
+    const result = await updatePost(post.id, postData);
+
+    console.log(result);
+  });
 }

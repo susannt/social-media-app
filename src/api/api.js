@@ -34,3 +34,12 @@ export async function createPost(postData) {
 
     return result;
 }
+
+export async function updatePost(postId, postData) {
+    const result = await apiClient(`/social/posts/${postId}`, {
+        method: "PUT",
+        body: JSON.stringify(postData),
+    });
+
+    return result;
+}
