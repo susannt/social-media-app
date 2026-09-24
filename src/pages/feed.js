@@ -6,16 +6,59 @@ export async function renderFeed() {
 
     const app = document.querySelector("#app");
 
-    app.innerHTML = result.data
-        .map(
-            (post) => `
-                <article data-id="${post.id}">
-                    <h2>${post.title}</h2>
-                    <p>${post.body}</p>
-                </article>
-            `,
-        )
-        .join("");
+    app.innerHTML = `
+        <h1>Feed</h1>
+            <input type="search" id="search-input" placeholder="Search posts...">
+
+        <div id="posts">
+            ${result.data
+                .map(
+                    (post) => `
+                        <article data-id="${post.id}">
+                            <h2>${post.title}</h2>
+                            <p>${post.body}</p>
+                        </article>
+                    `,
+                )
+                .join("")}
+        </div>            
+    `;
+
+    const searchInput = document.querySelector("#search-input");
+
+    searchInput.addEventListener("input", function () {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        const filteredPosts = result.data.filter((post) => {
+            return (
+                String(post.title ?? "").toLowerCase().includes(searchTerm) ||
+                String(post.body ?? "").toLowerCase().includes(searchTerm)
+            );
+        });
+
+        const postsContainer = document.querySelector("#posts");
+
+        postsContainer.innerHTML = filteredPosts
+            .map(
+                (post) => `
+                    <article data-id="${post.id}">
+                        <h2>${post.title}</h2>
+                        <p>${post.body}</p>
+                    </article>
+                `,
+            )
+            .join("");
+    
+        const filteredPostElements = document.querySelectorAll("#posts article");
+
+        filteredPostElements.forEach((post) => {
+            post.addEventListener("click", () => {
+                renderPost(post.dataset.id);
+            });
+        });
+
+    console.log(filteredPosts);
+});
 
     const posts = document.querySelectorAll("article");
     
