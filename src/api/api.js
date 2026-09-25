@@ -51,3 +51,9 @@ export async function deletePost(postId) {
 
     return result;
 }
+
+export async function getUserPosts(name) {
+    const result = await apiClient(`/social/profiles/${name}/posts`);
+
+    return result;
+}
