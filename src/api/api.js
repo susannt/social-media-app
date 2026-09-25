@@ -64,6 +64,14 @@ export async function getProfile(name) {
     return result;
 }
 
+export async function searchProfiles(query) {
+    const result = await apiClient(
+        `/social/profiles/search?q=${encodeURIComponent(query)}`,
+    );
+
+    return result;
+}
+
 export async function followUser(name) {
     const result = await apiClient(`/social/profiles/${name}/follow`, {
         method: "PUT",

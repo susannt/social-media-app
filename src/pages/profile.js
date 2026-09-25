@@ -3,7 +3,8 @@ import {
     getUserPosts,
     followUser,
     unfollowUser,
-    getFollowing 
+    getFollowing,
+    searchProfiles 
 } from "../api/api.js";
 
 export async function renderProfile() {
@@ -15,6 +16,10 @@ export async function renderProfile() {
 
     pageContent.innerHTML = `
         <h1>My Profile</h1>
+
+        <input type="search" id="user-search" placeholder="Search users...">
+        <div id="user-results"></div>
+
         <h2>${profile.name}</h2>
         <p>${profile.email}</p>
 
@@ -31,10 +36,42 @@ export async function renderProfile() {
             )
             .join("")}
     `;
+
+    const userSearch = document.querySelector("#user-search");
+    const userResults = document.querySelector("#user-results");
+
+    userSearch.addEventListener("input", async function () {
+        const searchTerm = userSearch.value;
+
+        if (!searchTerm) {
+            userResults.innerHTML = "";
+            return;
+        }
+
+        const result = await searchProfiles(searchTerm);
+
+        userResults.innerHTML = result.data
+            .map(
+                (user) => `
+                   <button type="button" class="user-result" data-name="${user.name}">
+                        ${user.name}
+                    </button>
+                `,
+            )
+            .join("");
+        
+        const userResultButtons = document.querySelectorAll(".user-result");
+
+        userResultButtons.forEach((button) => {
+            button.addEventListener("click", function () {
+                renderUserProfile(button.dataset.name);
+            });
+        });
+    });
 }
 
 export async function renderUserProfile(name) {
-    const pageContent = document.querySelector("#pageContent");
+    const pageContent = document.querySelector("#page-content");
 
     const myProfile = JSON.parse(localStorage.getItem("profile"));
     
