@@ -5,20 +5,27 @@ export async function renderPost(postId) {
 
     const post = result.data.find((post) => post.id === Number(postId));
     
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#page-content");
 
-    app.innerHTML = `
+    pageContent.innerHTML = `
         <article>
             <h1>${post.title}</h1>
-            <p>${post.title}</p>
+            <p>${post.body}</p>
+            <button id="edit-post">Edit</button>
         </article>
     `;
+
+    const editButton = document.querySelector("#edit-post");
+
+    editButton.addEventListener("click", function () {
+        renderEditPost(post);
+    });
 }
 
 export function renderEditPost(post) {
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#page-content");
 
-    app.innerHTML = `
+    pageContent.innerHTML = `
         <h1>Edit post</h1>
 
         <form id="edit-post-form">

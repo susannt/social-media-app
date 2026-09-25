@@ -4,9 +4,9 @@ import { renderPost } from "./post.js";
 export async function renderFeed() {
     const result = await getPosts();
 
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#page-content");
 
-    app.innerHTML = `
+    pageContent.innerHTML = `
         <h1>Feed</h1>
             <input type="search" id="search-input" placeholder="Search posts...">
 
@@ -70,9 +70,9 @@ export async function renderFeed() {
 }
 
 export function renderCreatePost() {
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#page-content");
 
-    app.innerHTML = `
+    pageContent.innerHTML = `
         <h1>Create post</h1>
 
         <form id="create-post-form">

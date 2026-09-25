@@ -1,9 +1,10 @@
 import { register } from "../api/api.js";
+import { renderLogin } from "./login.js";
 
 export function renderRegister() {
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#page-content");
 
-    app.innerHTML = `
+    pageContent.innerHTML = `
         <h1>Register</h1>
 
         <form id="register-form">
@@ -23,8 +24,9 @@ export function renderRegister() {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
 
-        const result = await register(name, email, password);
+        await register(name, email, password);
 
-        console.log(result);
+        renderLogin();
+
     });
 }

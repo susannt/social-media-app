@@ -7,13 +7,13 @@ import {
 } from "../api/api.js";
 
 export async function renderProfile() {
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#page-content");
 
     const profile = JSON.parse(localStorage.getItem("profile"));
 
     const result = await getUserPosts(profile.name);
 
-    app.innerHTML = `
+    pageContent.innerHTML = `
         <h1>My Profile</h1>
         <h2>${profile.name}</h2>
         <p>${profile.email}</p>
@@ -34,7 +34,7 @@ export async function renderProfile() {
 }
 
 export async function renderUserProfile(name) {
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#pageContent");
 
     const myProfile = JSON.parse(localStorage.getItem("profile"));
     
@@ -49,7 +49,7 @@ export async function renderUserProfile(name) {
 
     const postsResult = await getUserPosts(name);
 
-    app.innerHTML = `
+    pageContent.innerHTML = `
         <h1>${profile.name}</h1>
         <p>${profile.email}</p>
 

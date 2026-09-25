@@ -1,9 +1,10 @@
 import { loginUser } from "../api/authService.js";
+import { renderFeed } from "./feed.js";
 
 export function renderLogin() {
-    const app = document.querySelector("#app");
+    const pageContent = document.querySelector("#page-content");
 
-    app.innerHTML =`
+    pageContent.innerHTML =`
         <h1>Login</h1>
 
         <form id="login-form">
@@ -26,7 +27,11 @@ export function renderLogin() {
         try {
             const profile = await loginUser(credentials);
 
-            console.log(profile);
+            document.querySelector("#loggedOut").style.display = "none";
+            document.querySelector("#loggedIn").style.display = "block";
+            
+            renderFeed();
+
         }   catch (error) {
             console.error("Login failed:", error);
         }
