@@ -57,3 +57,36 @@ export async function getUserPosts(name) {
 
     return result;
 }
+
+export async function getProfile(name) {
+    const result = await apiClient(`/social/profiles/${name}`);
+
+    return result;
+}
+
+export async function followUser(name) {
+    const result = await apiClient(`/social/profiles/${name}/follow`, {
+        method: "PUT",
+    });
+
+    return result;
+}
+
+export async function unfollowUser(name) {
+    const result = await apiClient(`/social/profiles/${name}/unfollow`, {
+        method: "PUT",
+    });
+
+    return result;
+}
+
+export async function getFollowing(name) {
+    const result = await apiClient(
+        `/social/profiles/${name}?_following=true`,
+    );
+
+    return result;
+}
+
+
+

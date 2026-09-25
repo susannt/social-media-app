@@ -1,4 +1,4 @@
 import "./style.css";
-import { renderProfile } from "./pages/profile.js";
+import { renderUserProfile } from "./pages/profile.js";
 
-renderProfile();
+renderUserProfile("Zorro");
