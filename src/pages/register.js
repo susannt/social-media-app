@@ -24,9 +24,12 @@ export function renderRegister() {
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
 
-        await register(name, email, password);
-
-        renderLogin();
-
+        
+        try {
+            await register(name, email, password);
+            renderLogin();
+        } catch (error) {
+            alert("Registration failed. Use janedoe@stud.noroff.no");
+        }
     });
 }

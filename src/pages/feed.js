@@ -87,17 +87,19 @@ export function renderCreatePost() {
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
-    const postData = {
-        title: form.title.value,
-        body: form.body.value,
-    };
+        const postData = {
+            title: form.title.value,
+            body: form.body.value,
+        };
 
-    const result = await createPost(postData);
+        try {
+            const result = await createPost(postData);
 
-        if (result.data) {
-            alert("Post created successfully!")
-        }
-
-    console.log(result);
+            if (result.data) {
+                alert("Post created successfully!")
+            }
+        } catch (error) {
+            alert("Failed to create post.");
+        }    
     });
 }
