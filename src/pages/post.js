@@ -10,6 +10,7 @@ export async function renderPost(postId) {
     pageContent.innerHTML = `
         <article>
             <h1>${post.title}</h1>
+            ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ""}
             <p>${post.body}</p>
             <button id="edit-post">Edit</button>
         </article>
@@ -27,12 +28,15 @@ export function renderEditPost(post) {
 
     pageContent.innerHTML = `
         <h1>Edit post</h1>
+        ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ""}
 
         <form id="edit-post-form">
             <input type="text" id="title" value="${post.title}" required>
             <textarea id="body" required>${post.body}</textarea>
-            <button type="submit">Save changes</button>
-            <button type="button" id="delete-post">Delete post</button>
+            <div class="edit-buttons">
+                <button type="submit">Save changes</button>
+                <button type="button" id="delete-post">Delete post</button>
+            </div>
         </form>
   `;
 

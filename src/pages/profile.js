@@ -17,7 +17,7 @@ export async function renderProfile() {
     pageContent.innerHTML = `
         <h1>My Profile</h1>
 
-        <input type="search" id="user-search" placeholder="Search users...">
+        <input type="search" id="user-search" placeholder="Search for users to follow...">
         <div id="user-results"></div>
 
         <h2>${profile.name}</h2>

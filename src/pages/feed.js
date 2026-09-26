@@ -16,6 +16,7 @@ export async function renderFeed() {
                     (post) => `
                         <article data-id="${post.id}">
                             <h2>${post.title}</h2>
+                            ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ""}
                             <p>${post.body}</p>
                             <button>View post</button>
                         </article>
