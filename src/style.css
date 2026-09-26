@@ -1,16 +1,17 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --accent: #aa3bff;
+  --text: #000500;
+  --text-h: #362417;
+  --text-nav: #fffbff;
+  --background: #f1dabf;
+  --surface: #92817a;
+  --accent: #362417;
   
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
 
   font: 18px/145% var(--sans);
   color: var(--text);
-  background: var(--bg);
+  background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -23,26 +24,70 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--heading);
   font-weight: 500;
   color: var(--text-h);
 }
 
 h1 {
-  font-size: 56px;
-  margin: 32px 0;
+  font-size: 42px;
 }
 
 h2 {
   font-size: 24px;
-  margin: 0 0 8px;
   }
 
+h3 {
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 24px;
+  background: var(--surface);
+}
+
+nav a {
+  color: var(--text-nav);
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+nav a:hover {
+  color: var(--background);
+}
+
+button {
+  background: var(--accent);
+  color: var(--text-nav);
+  border: var(--text);
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--surface);
+}
+
+article:hover {
+  cursor: pointer;
+}
+
 #app {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
   min-height: 100svh;
+}
+
+#page-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
 }
 

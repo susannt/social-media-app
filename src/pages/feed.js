@@ -17,6 +17,7 @@ export async function renderFeed() {
                         <article data-id="${post.id}">
                             <h2>${post.title}</h2>
                             <p>${post.body}</p>
+                            <button>View post</button>
                         </article>
                     `,
                 )
