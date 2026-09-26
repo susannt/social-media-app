@@ -8,6 +8,10 @@ This project is a frontend social media application where users can register, lo
 
 The project was created as part of the Front-end Development course at Noroff.
 
+## Live Site
+
+[View the live application](https://susannt.github.io/social-media-app/)
+
 ## Features
 
 - Register a new user
