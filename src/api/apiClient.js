@@ -9,7 +9,7 @@ const BASE_URL = "https://v2.api.noroff.dev";
  * @returns {Promise<object>} The API response.
  */
 export async function apiClient(endpoint, options = {}) {
-  const apiKey = localStorage.getItem("apiKey");
+  import.meta.env.VITE_NOROFF_API_KEY || localStorage.getItem("apiKey");
   const accessToken = localStorage.getItem("accessToken");
 
   const headers = {
