@@ -7,4 +7,7 @@ I'm mainly using ChatGPT.
 - Help understanding and using the Noroff API key and Bearer token.
 - Help debugging API requests and understanding errors, including the empty DELETE response. 
 - Help debugging an issue where some posts from the API had null values, which caused error when searching. 
-- Explained the functionality behind follow/unfollow, and how the follow status and button logic work. 
+- Explained the functionality behind follow/unfollow, and how the follow status and button logic work.
+- Overall help with debugging minor errors. 
+- Helped with GitHub Pages deployment and debugging deployment issues.
+- Explained how Vite builds and deploys the application.
