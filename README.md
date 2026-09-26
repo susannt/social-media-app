@@ -28,7 +28,7 @@ The project was created as part of the Front-end Development course at Noroff.
 ### How to run the project
 
 2. 1. Clone the repository:
-   
+   `git clone https://github.com/susannt/social-media-app.git`
 
 2. Navigate to the project folder:
    `cd social-media-app`
