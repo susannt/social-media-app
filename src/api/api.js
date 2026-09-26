@@ -2,6 +2,15 @@ import { apiClient } from "./apiClient.js";
 
 const REGISTER_URL = "https://v2.api.noroff.dev/auth/register";
 
+/**
+* Register a new user.
+* 
+* @param {string} name The user's name.
+* @param {string} email The user's email.
+* @param {string} password The user's password.
+* @returns {Promise<oject>} The API response
+*/
+
 export async function register(name, email, password) {
     const response = await fetch(REGISTER_URL, {
         method: "POST",
