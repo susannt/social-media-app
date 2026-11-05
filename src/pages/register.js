@@ -4,7 +4,7 @@ import { renderLogin } from "./login.js";
 export function renderRegister() {
     const pageContent = document.querySelector("#page-content");
 
-    pageContent.innerHTML = `
+    pageContent.innerHTML = /*html*/ `
         <h1>Register</h1>
 
         <form id="register-form">

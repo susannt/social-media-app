@@ -6,7 +6,7 @@ export async function renderFeed() {
 
     const pageContent = document.querySelector("#page-content");
 
-    pageContent.innerHTML = `
+    pageContent.innerHTML = /*html*/`
         <h1>Feed</h1>
             <input type="search" id="search-input" placeholder="Search posts...">
 
@@ -74,7 +74,7 @@ export async function renderFeed() {
 export function renderCreatePost() {
     const pageContent = document.querySelector("#page-content");
 
-    pageContent.innerHTML = `
+    pageContent.innerHTML = /*html*/ `
         <h1>Create post</h1>
 
         <form id="create-post-form">

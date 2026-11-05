@@ -2,6 +2,8 @@
 
 I'm mainly using ChatGPT.
 
+## JavaScript 2
+
 - Guidance on the project setup. 
 - Assistance with Vite setup, Git, terminal commands, and pushing the intial project setup to GitHub.
 - Help understanding and using the Noroff API key and Bearer token.
@@ -11,3 +13,8 @@ I'm mainly using ChatGPT.
 - Overall help with debugging minor errors. 
 - Helped with GitHub Pages deployment and debugging deployment issues.
 - Explained how Vite builds and deploys the application.
+
+
+## CSS Frameworks
+
+- Guidance on how to install extensions for highlighting and autocomplete of HTML literals in JS files (ES6 String HTML and HTML in JS).

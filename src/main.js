@@ -7,7 +7,7 @@ import { logoutUser } from "./api/authService.js";
 
 const app = document.querySelector("#app");
 
-app.innerHTML =`
+app.innerHTML = /*html*/ `
   <nav id="loggedOut">
     <a href="#" id="register-nav">Register</a>
     <a href="#" id="login-nav">Login</a>
@@ -47,7 +47,6 @@ logoutNav.addEventListener("click", function (event) {
   renderLogin();
 });
 
-
 const loginNav = document.querySelector("#login-nav");
 
 loginNav.addEventListener("click", function (event) {
@@ -82,4 +81,3 @@ profileNav.addEventListener("click", function (event) {
   event.preventDefault();
   renderProfile();
 });
-

@@ -14,7 +14,7 @@ export async function renderProfile() {
 
     const result = await getUserPosts(profile.name);
 
-    pageContent.innerHTML = `
+    pageContent.innerHTML = /*html*/ `
         <h1>My Profile</h1>
 
         <input type="search" id="user-search" placeholder="Search for users to follow...">
@@ -86,7 +86,7 @@ export async function renderUserProfile(name) {
 
     const postsResult = await getUserPosts(name);
 
-    pageContent.innerHTML = `
+    pageContent.innerHTML = /*html*/ `
         <h1>${profile.name}</h1>
         <p>${profile.email}</p>
 

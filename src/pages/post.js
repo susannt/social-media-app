@@ -7,7 +7,7 @@ export async function renderPost(postId) {
     
     const pageContent = document.querySelector("#page-content");
 
-    pageContent.innerHTML = `
+    pageContent.innerHTML = /*html*/ `
         <article>
             <h1>${post.title}</h1>
             ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ""}
@@ -26,7 +26,7 @@ export async function renderPost(postId) {
 export function renderEditPost(post) {
     const pageContent = document.querySelector("#page-content");
 
-    pageContent.innerHTML = `
+    pageContent.innerHTML = /*html*/ `
         <h1>Edit post</h1>
         ${post.media ? `<img src="${post.media.url}" alt="${post.media.alt}">` : ""}
 

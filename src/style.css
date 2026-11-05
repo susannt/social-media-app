@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --text: #000500;
   --text-h: #362417;
@@ -34,7 +36,6 @@ body {
   margin: 0 auto;
   padding: 30px;
 }
-
 
 h1,
 h2,

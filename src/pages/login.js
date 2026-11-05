@@ -4,7 +4,7 @@ import { renderFeed } from "./feed.js";
 export function renderLogin() {
     const pageContent = document.querySelector("#page-content");
 
-    pageContent.innerHTML =`
+    pageContent.innerHTML = /*html*/ `
         <h1>Login</h1>
 
         <form id="login-form">
