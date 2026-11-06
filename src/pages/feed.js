@@ -12,7 +12,7 @@ export async function renderFeed() {
             type="search"
             id="search-input"
             placeholder="Search posts..."
-            class="w-full max-w-xl rounded-lg border border-accent bg-surface text-text shadow-sm px-4 py-1.5 mb-6"
+            class="w-full max-w-xl rounded-lg border border-accent bg-surface text-text shadow-sm px-4 py-1.5 mb-6 focus:outline-none focus:ring-1 focus:ring-accent"
         />
 
         <div id="posts" class="flex w-full max-w-xl flex-col gap-6">
@@ -86,12 +86,33 @@ export function renderCreatePost() {
   const pageContent = document.querySelector("#page-content");
 
   pageContent.innerHTML = /*html*/ `
-        <h1>Create post</h1>
+        <h1 class="text-2xl md:text-3xl font-semibold text-primary mb-6">Create post</h1>
 
-        <form id="create-post-form">
-            <input type="text" id="title" placeholder="Title" required>
-            <textarea id="body" placeholder="What's up?" required></textarea>
-            <button type="submit">Post</button>
+        <form id="create-post-form" class="flex w-full max-w-xl flex-col gap-4 rounded-xl bg-surface p-5 md:p-6 shadow-sm">
+            <input
+                type="text"
+                id="title"
+                placeholder="Title"
+                required
+                minlength="3"
+                maxlength="80"
+                class="w-full rounded-lg border border-accent bg-background px-4 py-3 text-text shadow-sm placeholder:text-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            />
+
+            <textarea
+                id="body"
+                placeholder="What's up?"
+                required
+                minlength="1"
+                maxlength="500"
+                class="w-full min-h-32 resize-y rounded-lg border border-accent bg-background px-4 py-3 text-text shadow-sm placeholder:text-accent focus:outline-none focus:ring-1 focus:ring-accent">
+            </textarea>
+            <button
+                type="submit"
+                class="self-start rounded-lg bg-accent px-6 py-3 font-semibold text-text-nav shadow-sm transition hover:bg-primary cursor-pointer"
+            >
+                Post
+            </button>
         </form>
     `;
 
