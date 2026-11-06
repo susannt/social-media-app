@@ -9,14 +9,15 @@ const app = document.querySelector("#app");
 
 app.innerHTML = /*html*/ `
   <nav id="loggedOut" class="bg-primary p-4">
-    <div class="flex items-center justify-between">
+    <div class="flex flex-wrap items-center justify-between">
       <span class="font-semibold text-text-nav">Social Media App</span>
       <button id="logged-out-menu-toggle" class="text-text-nav md:hidden">☰</button>
-    </div>  
-    <div id="logged-out-links" class="hidden flex-col gap-2 pt-4 md:flex md:flex-row md:items-center md:justify-end">
-      <a href="#" id="register-nav" class="rounded-lg px-3 py-2 text-text-nav hover:text-accent">Register</a>
-      <a href="#" id="login-nav" class="rounded-lg px-3 py-2 text-text-nav hover:text-accent">Login</a>
-    </div>
+
+      <div id="logged-out-links" class="hidden w-full flex-col gap-2 pt-4 md:flex md:w-auto md:flex-row md:items-center md:gap-4 md:pt-0">
+        <a href="#" id="register-nav" class="rounded-lg px-3 py-2 text-text-nav hover:text-accent">Register</a>
+        <a href="#" id="login-nav" class="rounded-lg px-3 py-2 text-text-nav hover:text-accent">Login</a>
+      </div>
+    </div> 
   </nav>
 
   <nav id="loggedIn" class="bg-primary p-4">

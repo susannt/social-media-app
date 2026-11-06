@@ -7,16 +7,14 @@
   --color-surface: #fffbff;
   --color-text: #000500;
   --color-text-nav: #fffbff;
+
+  --font-sans: "DM Sans", sans-serif;
 }
 
 :root {
-  --text: #000500;
-  --text-h: #362417;
-  --text-nav: #fffbff;
-  --background: #f1dabf;
-  --surface: #362417;
-  --accent: #92817a;
-  
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
   font-size: 18px;
   line-height: 1.45;
   color: var(--text);
@@ -25,11 +23,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#login-form,
-#register-form {
-  max-width: 250px;
 }
 
 

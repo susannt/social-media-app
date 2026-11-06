@@ -33,16 +33,18 @@ export async function renderProfile() {
 
         <h2 class="text-xl md:text-2xl font-semibold text-primary mb-4">My posts</h2>
 
-        ${result.data
-            .map(
-                (post) => `
-                    <article class="flex w-full max-w-xl flex-col gap-4 rounded-xl bg-surface p-5 shadow-sm">
-                        <h3 class="text-xl font-semibold text-primary">${post.title}</h3>
-                        <p class="text-text leading-relaxed wrap-break-word">${post.body}</p>
-                    </article>
-                `,
-            )
-            .join("")}
+        <div class="flex flex-col gap-6">
+            ${result.data
+                .map(
+                    (post) => `
+                        <article class="flex w-full max-w-xl flex-col gap-4 rounded-xl bg-surface p-5 shadow-sm">
+                            <h3 class="text-xl font-semibold text-primary">${post.title}</h3>
+                            <p class="text-text leading-relaxed wrap-break-word">${post.body}</p>
+                        </article>
+                    `,
+                )
+                .join("")}
+        </div>
     `;
 
     const userSearch = document.querySelector("#user-search");
