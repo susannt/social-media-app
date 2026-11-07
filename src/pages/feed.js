@@ -66,7 +66,7 @@ export async function renderFeed() {
 
     filteredPostElements.forEach((post) => {
       post.addEventListener("click", () => {
-        renderPost(post.dataset.id);
+        renderPost(post.dataset.id, renderFeed);
       });
     });
 
@@ -77,12 +77,12 @@ export async function renderFeed() {
 
   posts.forEach((post) => {
     post.addEventListener("click", () => {
-      renderPost(post.dataset.id);
+      renderPost(post.dataset.id, renderFeed);
     });
   });
 }
 
-export function renderCreatePost() {
+export function renderCreatePost(goToFeed) {
   const pageContent = document.querySelector("#page-content");
 
   pageContent.innerHTML = /*html*/ `
@@ -131,6 +131,7 @@ export function renderCreatePost() {
 
       if (result.data) {
         alert("Post created successfully!");
+        goToFeed();
       }
     } catch (error) {
       alert("Failed to create post.");

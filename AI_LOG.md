@@ -17,4 +17,9 @@ I'm mainly using ChatGPT.
 
 ## CSS Frameworks
 
-- Guidance on how to install extensions for highlighting and autocomplete of HTML literals in JS files (ES6 String HTML and HTML in JS).
+
+
+- Guidance on installing and configuring VS Code extensions for HTML syntax highlighting and autocomplete in JavaScript template literals (ES6 String HTML and HTML in JS).
+- Troubleshooting why the background color was not displaying correctly when using custom colors defined in the Tailwind theme.
+- Help debugging the responsive navigation, particularly the hamburger menu on mobile and the desktop navigation. This included troubleshooting Flexbox behavior, element positioning, alignment, spacing, and dropdown styling for both logged-in and logged-out navigation states.
+- Explanations of Tailwind CSS utility classes and responsive prefixes as I worked with them, to better understand what the different classes do and how they affect the layout.

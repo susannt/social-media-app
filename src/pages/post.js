@@ -1,6 +1,6 @@
 import { getPosts, updatePost, deletePost } from "../api/api.js";
 
-export async function renderPost(postId) {
+export async function renderPost(postId, goToFeed) {
     const result = await getPosts ();
 
     const post = result.data.find((post) => post.id === Number(postId));
@@ -29,11 +29,11 @@ export async function renderPost(postId) {
     const editButton = document.querySelector("#edit-post");
 
     editButton.addEventListener("click", function () {
-        renderEditPost(post);
+        renderEditPost(post, goToFeed);
     });
 }
 
-export function renderEditPost(post) {
+export function renderEditPost(post, goToFeed) {
     const pageContent = document.querySelector("#page-content");
 
     pageContent.innerHTML = /*html*/ `
@@ -88,13 +88,20 @@ export function renderEditPost(post) {
 
         const result = await updatePost(post.id, postData);
 
-        console.log(result);
+        if (result.data) {
+            alert("Post updated successfully!");
+            goToFeed();
+        }
     });
 
     const deleteButton = document.querySelector("#delete-post");
 
     deleteButton.addEventListener("click", async function () {
         const result = await deletePost(post.id);
-        console.log(result);
+
+        if (result) {
+            alert("Post deleted successfully!");
+            goToFeed()
+        }
     });
 }
