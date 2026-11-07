@@ -1,140 +1,28 @@
-:root {
-  --text: #000500;
-  --text-h: #362417;
-  --text-nav: #fffbff;
-  --background: #f1dabf;
-  --surface: #362417;
-  --accent: #92817a;
-  
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+@import "tailwindcss";
 
-  font: 18px/145% var(--sans);
+@theme {
+  --color-background: #f1dabf;
+  --color-primary: #362417;
+  --color-accent: #92817a;
+  --color-surface: #fffbff;
+  --color-text: #000500;
+  --color-text-nav: #fffbff;
+
+  --font-sans: "DM Sans", sans-serif;
+}
+
+:root {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.45;
   color: var(--text);
   background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-}
-
-body {
-  margin: 0;
-}
-
-#app {
-  width: 100%;
-  margin: 0 auto;
-  min-height: 100svh;
-}
-
-#page-content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 30px;
-}
-
-
-h1,
-h2,
-h3 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 42px;
-}
-
-h2 {
-  font-size: 24px;
-  }
-
-h3 {
-  font-size: 20px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 24px;
-  background: var(--surface);
-}
-
-nav a {
-  color: var(--text-nav);
-  text-decoration: none;
-  padding: 8px 12px;
-}
-
-nav a:hover {
-  color: var(--background);
-}
-
-button {
-  background: var(--accent);
-  color: var(--text-nav);
-  border: none;
-  border-radius: 6px;
-  padding: 8px 20px;
-  cursor: pointer;
-  box-shadow: 1px 2px 4px #92817a;
-  width: 100px;
-}
-
-.edit-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.edit-buttons button {
-  width: 130px;
-}
-
-button:hover {
-  background: var(--surface);
-}
-
-img {
-  width: 100%;
-  max-width: 400px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 2px solid var(--surface);
-  box-shadow: 1px 2px 4px #92817a;
-}
-
-article:hover {
-  cursor: pointer;
-}
-
-input,
-textarea {
-  width: 250px;
-  padding: 8px;
-  border:0px;
-  border-radius: 6px;
-  box-shadow: inset 0 1px 2px #92817a;
-}
-
-textarea {
-  height: 100px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 400px;
-}
-
-#login-form,
-#register-form {
-  max-width: 250px;
 }
 
 
